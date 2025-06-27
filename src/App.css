@@ -1,6 +1,14 @@
 .App {
   text-align: center;
 }
+/* src/App.css */
+
+main {
+  padding-top: 80px; /* делаем отступ сверху под высоту navbar */
+  min-height: calc(100vh - 80px);
+  background-color: #fafafa;
+}
+
 
 .App-logo {
   height: 40vmin;

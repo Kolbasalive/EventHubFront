@@ -1,0 +1,61 @@
+/* EventDetail.css */
+
+.event-detail-container {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 25px 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.5;
+}
+
+.event-detail-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #1a73e8;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.event-detail-category {
+    font-size: 18px;
+    font-weight: 500;
+    color: #666;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.event-detail-date,
+.event-detail-location,
+.event-detail-rating,
+.event-detail-organization {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.event-detail-description {
+    margin-top: 20px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-left: 4px solid #1a73e8;
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .event-detail-container {
+        margin: 20px 10px;
+        padding: 20px;
+    }
+
+    .event-detail-title {
+        font-size: 24px;
+    }
+
+    .event-detail-description {
+        font-size: 15px;
+    }
+}

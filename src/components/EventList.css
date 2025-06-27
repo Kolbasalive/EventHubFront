@@ -1,0 +1,100 @@
+/* EventList.css */
+
+/* Контейнер для всех карточек */
+.events-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* центрирование по горизонтали */
+    gap: 20px; /* отступы между карточками */
+    padding: 20px 10px;
+    background-color: #f5f5f5;
+}
+
+/* Одна карточка события */
+.event-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Заголовок события */
+.event-title {
+    font-size: 20px;
+    margin-bottom: 6px;
+    color: #333;
+    text-align: center;
+}
+
+/* Категория */
+.event-category {
+    font-size: 14px;
+    margin-bottom: 12px;
+    color: #757575;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Описание */
+.event-description {
+    font-size: 14px;
+    margin-bottom: 12px;
+    color: #424242;
+    flex-grow: 1; /* чтобы описание «растягивало» карточку */
+}
+
+/* Детали (дата, локация) */
+.event-details {
+    font-size: 13px;
+    margin-bottom: 8px;
+    color: #616161;
+}
+
+/* Строка «Средний рейтинг / Количество отзывов» */
+.event-stats {
+    font-size: 13px;
+    color: #424242;
+    margin-top: auto; /* прижать к низу карточки */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Кнопка «Подробнее» (если понадобится) */
+.event-button {
+    margin-top: 12px;
+    padding: 8px;
+    background-color: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+}
+
+.event-button:hover {
+    background-color: #1565c0;
+}
+
+/* Курсор «указатель» и плавный фон при наведении */
+.event-card {
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.event-card:hover {
+    background-color: #f0f8ff; /* лёгкий бледно-голубой фон при hover */
+}
+

@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './EventDetail.css'; // (по желанию, стили для страницы деталей)
 
+const API_URL = process.env.REACT_APP_API_URL || 'http://eventservice:8080';
+
 function EventDetail() {
     const { id } = useParams();
     const navigate = useNavigate();
@@ -14,7 +16,7 @@ function EventDetail() {
         console.log('EventDetail МОНТИРОВАН');
         const fetchEventById = async () => {
             try {
-                const response = await fetch(`http://eventservice:8080/event/${id}`, {
+                const response = await fetch(`${API_URL}/event/${id}`, {
                     headers: {
                         'Authorization': 'Bearer ' + localStorage.getItem('access_token')
                     }

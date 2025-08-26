@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import './FormStyles.css';
 
+const API_URL = process.env.REACT_APP_API_URL || 'http://eventservice:8080';
 
 const RegisterForm = ({ onLogin }) => {
     const navigate = useNavigate();
@@ -31,7 +32,7 @@ const RegisterForm = ({ onLogin }) => {
         }
 
         try {
-            const response = await fetch('http://eventservice:8080/auth/register', {
+            const response = await fetch(`${API_URL}/auth/register`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

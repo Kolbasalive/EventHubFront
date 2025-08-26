@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './EventList.css';
 
+const API_URL = process.env.REACT_APP_API_URL || 'http://eventservice:8080';
+
 function EventList() {
     const [events, setEvents] = useState([]);
     const navigate = useNavigate();
@@ -10,7 +12,7 @@ function EventList() {
         console.log('EventList МОНТИРОВАН');
         const fetchEvents = async () => {
             try {
-                const response = await fetch('http://eventservice:8080/event/all', {
+                const response = await fetch(`${API_URL}/event/all`, {
                     headers: {
                         'Authorization': 'Bearer ' + localStorage.getItem('access_token')
                     }

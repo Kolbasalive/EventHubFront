@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import './FormStyles.css';
 
+const API_URL = process.env.REACT_APP_API_URL || 'http://eventservice:8080';
+// const API_URL = 'http://localhost:8080';
+
 const LoginForm = ({ onLogin }) => {
     const navigate = useNavigate();
     const [form, setForm] = useState({ login: '', password: '' });
@@ -17,7 +20,7 @@ const LoginForm = ({ onLogin }) => {
         setError('');
 
         try {
-            const response = await fetch('http://eventservice:8080/auth/login', {
+            const response = await fetch(`${API_URL}/auth/login`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(form),

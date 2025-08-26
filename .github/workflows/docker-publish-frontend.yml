@@ -36,6 +36,15 @@ jobs:
           echo "---- package-lock contains registry urls ----"
           grep -R "registry.npmjs" -n package-lock.json || true
 
+      - name: Debug fetch specific package
+        run: |
+          echo "Try npm view tsutils ..."
+          npm view tsutils version || true
+          echo "Try curl to tarball for a likely version (example 3.10.0):"
+          curl -I https://registry.npmjs.org/tsutils/-/tsutils-3.10.0.tgz || true
+          echo "Try direct npm install of tsutils to see full error:"
+          npm i tsutils@3.10.0 --verbose || true
+
       - name: Install dependencies
         run: npm ci
         working-directory: .

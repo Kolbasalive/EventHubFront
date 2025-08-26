@@ -14,7 +14,7 @@ function EventDetail() {
         console.log('EventDetail МОНТИРОВАН');
         const fetchEventById = async () => {
             try {
-                const response = await fetch(`http://localhost:8080/event/${id}`, {
+                const response = await fetch(`http://eventservice:8080/event/${id}`, {
                     headers: {
                         'Authorization': 'Bearer ' + localStorage.getItem('access_token')
                     }

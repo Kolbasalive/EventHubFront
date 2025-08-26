@@ -10,7 +10,7 @@ function EventList() {
         console.log('EventList МОНТИРОВАН');
         const fetchEvents = async () => {
             try {
-                const response = await fetch('http://localhost:8080/event/all', {
+                const response = await fetch('http://eventservice:8080/event/all', {
                     headers: {
                         'Authorization': 'Bearer ' + localStorage.getItem('access_token')
                     }

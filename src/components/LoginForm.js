@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import './FormStyles.css';
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://eventservice:8080';
+const API_URL = process.env.REACT_APP_API_URL || 'http://89.111.169.64:8080';
 // const API_URL = 'http://localhost:8080';
 
 const LoginForm = ({ onLogin }) => {
@@ -20,7 +20,10 @@ const LoginForm = ({ onLogin }) => {
         setError('');
 
         try {
-            const response = await fetch(`${API_URL}/auth/login`, {
+            const url = `${API_URL}/auth/login`;
+            console.log("Запрос пойдёт на:", url);
+
+            const response = await fetch(url, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(form),

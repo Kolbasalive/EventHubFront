@@ -27,6 +27,15 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Debug npm config
+        run: |
+          echo "---- npm config get registry ----"
+          npm config get registry || true
+          echo "---- cat .npmrc (if exists) ----"
+          if [ -f .npmrc ]; then sed -n '1,200p' .npmrc; else echo ".npmrc not found"; fi
+          echo "---- package-lock contains registry urls ----"
+          grep -R "registry.npmjs" -n package-lock.json || true
+
       - name: Install dependencies
         run: npm ci
         working-directory: .

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import './FormStyles.css';
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://89.111.169.64:8080';
+const API_URL = '/api';
 // const API_URL = 'http://localhost:8080';
 
 const LoginForm = ({ onLogin }) => {

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './EventList.css';
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://89.111.169.64:8080';
+const API_URL = '/api';
 
 function EventList() {
     const [events, setEvents] = useState([]);
